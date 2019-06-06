@@ -1,0 +1,21 @@
+---
+- name: create a new instance 
+  os_server:
+       state: present
+       auth:
+         auth_url: "{{ os_auth_url }}"
+         username: "{{ os_username }}"
+         password: "{{ os_password }}"
+         project_name: "{{ os_tenant_name }}"
+       name: "{{ instance_name }}"
+       image: "{{ image_name }}"
+       key_name: "{{ keypair_name }}"
+       timeout: 200
+       flavor: "{{ flavor_name }}"
+       network: "{{ network_name }}"
+       meta:
+         hostname: "{{ instance_hostname }}"
+         group: "{{ instance_security_group }}"
+  register: os_server_ran
+#- debug: var={{ item }}
+#  with_dict: os_server_ran

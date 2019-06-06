@@ -1,0 +1,6 @@
+[localhost]
+localhost ansible_connection=local  ansible_python_interpreter="/home/faruq/virtualenvs/emedlab-virtual_cluster01/bin/python"
+#localhost ansible_connection=local  ansible_python_interpreter="/usr/bin/env python"
+
+[fstest-vc02]
+10.2.211.179

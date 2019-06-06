@@ -1,0 +1,8 @@
+---
+instance_name: 'fsdoc-vm01'
+image_name: '2c348365-317b-47b2-8341-cadeb8baf60a'
+flavor_name: 'm1.small'
+network_name:  'net1'
+instance_hostname: 'fsdoc-vm01'
+instance_security_group: 'default'
+keypair_name: 'fs-xubu'

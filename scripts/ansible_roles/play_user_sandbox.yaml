@@ -1,0 +1,25 @@
+- hosts: fstest-vc02
+  become: yes
+  become_user: root
+  roles:
+    - role: user_sandbox
+    - role: cchurch.virtualenv
+      virtualenv_path: /home/testuser1/virtualenv
+      #virtualenv_os_packages:
+      #  apt: ['libjpeg-dev']
+      #  yum: ['libjpeg-devel]
+      #virtualenv_pre_packages:
+      #  - name: Django
+      #    version: 1.6.11
+      #  - South
+      #  - Pillow
+      virtualenv_requirements:
+        - /tmp/requirements.txt
+      #virtualenv_post_packages:
+      #  - name: PIL
+      #    state: absent
+      virtualenv_notify_on_updated: virtualenv updated
+  handlers:
+    - name: virtualenv updated
+      debug:
+        msg: "virtualenv in {{virtualenv_path}} was updated."
